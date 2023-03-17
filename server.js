@@ -11,7 +11,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
 var User = require('./model.js').User;
 var Message = require('./model.js').Message;
-const { body, check, validationResult } = require('express-validator/check');
+const { body, check, validationResult } = require('express-validator');
 app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
