@@ -1,0 +1,51 @@
+<h1>This is the dashboard!</h1>
+
+<ul>
+
+          <% users.forEach(user => { %>
+
+            <ul>
+
+            <% user.messages.forEach(message => { %>
+              <li> message: <%= message.text %></li>
+              <% if (status === "Updated" || isAdmin === "on") { %>
+                <li>author: <%= user.username %></li>
+                <li>date created: <%= message.timestamp %></li>
+              <% } %>
+              <% if (isAdmin  === "on") {%>
+                <form action="/delete/<%= message._id %>" method="POST">
+                  Delete Message
+                  <button>Submit</button>
+                </form>
+                <% }%>
+
+
+            <% }); %>
+          </ul>
+
+          <% }); %>
+  </ul>
+
+
+
+
+
+<h1>Add a message</h1>
+
+<% if (username) {%>
+    <form action="/createMessage" method="POST">
+    <input type="text" name="title" placeholder="title">
+    <textarea id="text" name="text" rows="4" cols="50">
+    </textarea>
+    <button>Submit</button>
+</form>
+  <% }%>
+
+
+
+
+<li><a href="/register">register!</a></li>
+<li><a href="/delete">Delete all users</a></li>
+<li><a href="/login">login!</a></li>
+<li><a href="/logout">logout!</a></li>
+<li><a href="/createMessage">Add a message</a></li>
