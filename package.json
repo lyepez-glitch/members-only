@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "",
     "main": "model.js",
+    "engines": {
+        "node": "^19.8.1"
+    },
+
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server.js",
@@ -18,4 +22,6 @@
         "express-validator": "^6.15.0",
         "node": "^19.8.1"
     }
+
+
 }
