@@ -14,7 +14,7 @@ var bcrypt = require('bcryptjs');
 var User = require('./model.js').User;
 var Message = require('./model.js').Message;
 const { body, check, validationResult } = require('express-validator');
-app.use(session({ secret: "cats", store: MongoStore.create() resave: false, saveUninitialized: true }));
+app.use(session({ secret: "cats", store: MongoStore.create(), resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(
