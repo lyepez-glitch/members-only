@@ -20,7 +20,7 @@
         "await": "^0.2.6",
         "dotenv": "^16.0.3",
         "express-validator": "^6.15.0",
-        "node": "^19.8.1"
+        "node": "^16.x"
     }
 
 
